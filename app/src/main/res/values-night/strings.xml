@@ -1,5 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Crypto currency app</string>
     <string name="the_index_is_calculated">The rating TOP-100 cryptocurrencies by market capitalization.\nPowered by CoinGecko API</string>
-    <string name="rate_this_app_button_text">Rate This App</string>
 </resources>
