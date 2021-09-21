@@ -1,16 +1,21 @@
 package com.example.cryptocurrencyapp.adapters
 
-import android.icu.util.Currency
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.cryptocurrencyapp.R
-import java.util.*
 
-class CurrenciesAdapter  {
+class CurrenciesAdapter : BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
 
     // Создаёт ViewHolder и инициализирует views для списка
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false)
+        return CurrencyViewHolder(v)
+    }
 
     // Реализация ViewHolder
     class CurrencyViewHolder(view: View) : BaseAdapter.BaseViewHolder(view) {
