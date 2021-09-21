@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.cryptocurrencyapp.activities.AboutActivity
+import com.example.cryptocurrencyapp.fragments.CurrenciesListFragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 
@@ -24,9 +25,13 @@ class MainActivity : AppCompatActivity() {
         interstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
         interstitialAd.loadAd(AdRequest.Builder().build())
 
-//        val str = Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID)
-//
-//        Log.i("qq", "$str")
+        if(savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.container, CurrenciesListFragment(), null)
+                .commit()
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
